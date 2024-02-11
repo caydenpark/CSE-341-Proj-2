@@ -1,29 +1,144 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "My API"
+      "title": "My API",
+      "description": "World Cup Champions API",
+      "version": "1.0.0"
     },
-    "host": "localhost:3000",
+    "host": "cse-341-proj-2.onrender.com",
     "basePath": "/",
     "schemes": ["https"],
     "paths": {
-        "/": {
-            "get": {
-                "parameters": [
-                    {
-                    "in": "query",
-                    "name": "name",
-                    "type": "string",
-                    "description": "Name parameter",
-                    "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK, Successful response"
-                    }
-                }
+      "/worldCupChampions/": {
+        "get": {
+          "description": "",
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "500": {
+              "description": "Internal Server Error"
             }
+          }
+        },
+        "post": {
+          "description": "",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "Spain"
+                  },
+                  "continent": {
+                    "example": "Europe"
+                  },
+                  "winCount": {
+                    "example": 1
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Created"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
         }
+      },
+      "/worldCupChampions/{id}": {
+        "get": {
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "put": {
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "Netherlands"
+                  },
+                     "continent": {
+                     "example": "Europe"
+                  },
+                     "winCount": {
+                     "example": 0
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "No Content"
+            },
+            "404": {
+              "description": "Not Found"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "delete": {
+          "description": "",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not Found"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      }
     }
-}
+  }
+  

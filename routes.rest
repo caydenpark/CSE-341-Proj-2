@@ -27,36 +27,36 @@ Content-Type: application/json
 }
 
 ### Delete World Cup Champion
-DELETE http://localhost:3000/worldCupChampions/65c859ebb13371ae75c59c59
+DELETE http://localhost:3000/worldCupChampions/
 
 
 # PRODUCTION - RENDER
 
 ### Get all World Cup Champions
-GET https://cse341part1.onrender.com/worldCupChampions
+GET https://cse-341-proj-2.onrender.com/worldCupChampions
 
 ### Get World Cup Champion by _id
-GET https://cse341part1.onrender.com/worldCupChampions/
+GET https://cse-341-proj-2.onrender.com/worldCupChampions/
 
 ### Create new World Cup Champion
-POST https://cse341part1.onrender.com/worldCupChampions
+POST https://cse-341-proj-2.onrender.com/worldCupChampions
 Content-Type: application/json
 
 {
-  "name": "Argentina",
+  "name": "Brazil",
   "continent": "South America",
-  "winCount": 3
+  "winCount": 4
 }
 
 ### Update World Cup Champion
-PUT https://cse341part1.onrender.com/worldCupChampions/
+PUT https://cse-341-proj-2.onrender.com/worldCupChampions/
 Content-Type: application/json
 
 {
-  "name": "Argentina",
+  "name": "Brazil",
   "continent": "South America",
-  "winCount": 3
+  "winCount": 5
 }
 
 ### Delete World Cup Champion
-DELETE https://cse341part1.onrender.com/worldCupChampions/
+DELETE https://cse-341-proj-2.onrender.com/worldCupChampions/
