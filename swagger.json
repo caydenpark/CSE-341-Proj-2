@@ -1,0 +1,29 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "My API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": ["https"],
+    "paths": {
+        "/": {
+            "get": {
+                "parameters": [
+                    {
+                    "in": "query",
+                    "name": "name",
+                    "type": "string",
+                    "description": "Name parameter",
+                    "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK, Successful response"
+                    }
+                }
+            }
+        }
+    }
+}

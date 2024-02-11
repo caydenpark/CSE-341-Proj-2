@@ -1,0 +1,62 @@
+# LOCALHOST
+
+### Get all World Cup Champions
+GET http://localhost:3000/worldCupChampions
+
+### Get World Cup Champion by _id
+GET http://localhost:3000/worldCupChampions/
+
+### Create new World Cup Champion
+POST http://localhost:3000/worldCupChampions
+Content-Type: application/json
+
+{
+  "name": "USA",
+  "continent": "North America",
+  "winCount": 0
+}
+
+### Update World Cup Champion
+PUT http://localhost:3000/worldCupChampions/
+Content-Type: application/json
+
+{
+  "name": "Mexico",
+  "continent": "Central America",
+  "winCount": 0
+}
+
+### Delete World Cup Champion
+DELETE http://localhost:3000/worldCupChampions/65c859ebb13371ae75c59c59
+
+
+# PRODUCTION - RENDER
+
+### Get all World Cup Champions
+GET https://cse341part1.onrender.com/worldCupChampions
+
+### Get World Cup Champion by _id
+GET https://cse341part1.onrender.com/worldCupChampions/
+
+### Create new World Cup Champion
+POST https://cse341part1.onrender.com/worldCupChampions
+Content-Type: application/json
+
+{
+  "name": "Argentina",
+  "continent": "South America",
+  "winCount": 3
+}
+
+### Update World Cup Champion
+PUT https://cse341part1.onrender.com/worldCupChampions/
+Content-Type: application/json
+
+{
+  "name": "Argentina",
+  "continent": "South America",
+  "winCount": 3
+}
+
+### Delete World Cup Champion
+DELETE https://cse341part1.onrender.com/worldCupChampions/
