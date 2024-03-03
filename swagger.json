@@ -38,6 +38,15 @@
                   },
                   "winCount": {
                     "example": 1
+                  },
+                  "yearsWon": {
+                    "example": [2010]
+                  },
+                  "languages": {
+                    "example": "Spanish"
+                  },
+                  "countryCode": {
+                    "example": "SP"
                   }
                 }
               }
@@ -99,6 +108,15 @@
                   },
                      "winCount": {
                      "example": 0
+                  },
+                     "yearsWon": {
+                     "example": []
+                  },
+                     "languages": {
+                     "example": "Dutch"
+                  },
+                     "countryCode": {
+                     "example": "NL"
                   }
                 }
               }
