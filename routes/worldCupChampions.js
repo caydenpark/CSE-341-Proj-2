@@ -2,6 +2,7 @@ const router = require('express').Router();
 const client = require('../db/connect.js');
 const { body, validationResult } = require('express-validator')
 const { ObjectId } = require('mongodb');
+const { auth, requiresAuth } = require('express-openid-connect');
 
 // Validation middleware for POST and PUT requests
 const validate = (method) => {
@@ -24,7 +25,7 @@ const validate = (method) => {
 };
 
 // Get all World Cup Champions
-router.get('/', async (req, res) => {
+router.get('/', requiresAuth(), async (req, res) => {
   try {
     const worldCupChampionsCollection = client.db('cse341Proj2').collection('worldCupChampions');
     const worldCupChampions = await worldCupChampionsCollection.find({}).toArray();
@@ -62,7 +63,10 @@ router.post('/', validate('createWorldCupChampion'), async (req, res) => {
   const worldCupChampion = {
     name: req.body.name,
     continent: req.body.continent,
-    winCount: req.body.winCount
+    winCount: req.body.winCount,
+    yearsWon: req.body.yearsWon,
+    languages: req.body.languages,
+    countryCode: req.body.countryCode
   };
   try {
     const worldCupChampionsCollection = client.db('cse341Proj2').collection('worldCupChampions');
@@ -89,7 +93,7 @@ router.put('/:id', validate('updateWorldCupChampion'), async (req, res) => {
   };
   try {
     const worldCupChampionsCollection = client.db('cse341Proj2').collection('worldCupChampions');
-    const worldCupChampion = await worldCupChampionsCollection.updateOne(
+    const worldCupChampion = await worldCupChampionsCollection.findOneAndUpdate(
       { _id: new ObjectId(req.params.id) },
       { $set: req.body }
     );
