@@ -2,7 +2,7 @@ const router = require('express').Router();
 const client = require('../db/connect.js');
 const { body, validationResult } = require('express-validator')
 const { ObjectId } = require('mongodb');
-const { auth, requiresAuth } = require('express-openid-connect');
+const { requiresAuth } = require('express-openid-connect');
 
 // Validation middleware for POST and PUT requests
 const validate = (method) => {
